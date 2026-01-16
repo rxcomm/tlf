@@ -52,6 +52,7 @@ char short_number(char c) {
 
     if (shortqsonr == SHORTCW) {
 	if (c == '9')  return 'N';
+	if (c == '1')  return 'A';
 	if (c == '0')  return 'T';
     }
     return c;
