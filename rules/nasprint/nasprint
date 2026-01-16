@@ -1,0 +1,83 @@
+########################
+# NCCC Sprint Contest
+# Configured for TLF Logger (v1.5~git)
+# Contest Date: January 2026 (or current date)
+########################
+
+# Contest Mode Settings
+CONTEST=nasprint
+LOGFILE=nasprint.log
+CONTEST_MODE
+CABRILLO=SPRINT
+NO_RST
+
+##########################
+# Message Setup (F1 to F12)
+##########################
+
+# CW / SSB Exchange Messages
+# The format for CQ and S&P changes depending on whether you are the CQ station or the answering station
+
+# When CQ'ing
+F1=NS % NS
+# When answering a CQ
+F2=@ DE %
+F3=@ % # DAVE IA
+F4=73
+F5=@
+F6=%
+F7=@ SRI B4 GL
+F8=AGN
+F9= ?
+F10= QRZ?
+F11= PSE K
+F12=NS % NS
+
+# CQ and S&P Messages
+CQ_TU_MSG=TU
+S&P_TU_MSG=TU @ # DAVE IA %
+
+###############################
+# Alternate Messages (F0 to F9)
+###############################
+
+ALT_1=#
+ALT_2=DAVE
+ALT_3=IA
+ALT_4=NAME?
+ALT_5=NUM?
+ALT_6=QTH?
+
+##########################
+# Points and Multipliers
+##########################
+
+# Points Settings (adjust based on contest rules)
+ONE_POINT
+
+# Multipliers
+#PLUGIN_CONFIG=dummy
+GENERIC_MULT=ALL
+MULT_LIST=nasprint_mult_list
+##########################
+# Exchange Settings
+##########################
+
+# Define the exchange format directly
+# For the NCCC Sprint, the exchange order varies depending on whether you are the CQ station or the answering station
+# Format for CQ station: @ % # DAVE IA
+# Format for answering station: @ # DAVE IA %
+#EXCHANGE=@,% ,#
+
+##########################
+# Additional Settings
+##########################
+
+# Enable or disable specific features in the contest
+#MULT_TRACKING=ON
+CABRILLO-EXCHANGE=# DAVE IA
+SPRINTMODE=ON
+LEADING_ZEROS_SERIAL=FALSE
+SHORT_SERIAL
+#NOAUTOCQ
+####### END #####################
