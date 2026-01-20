@@ -250,44 +250,6 @@ int callinput(void) {
 		grab_up = !grab_up;
 		break;
 
-	    // Plus (=)
-	    // - in non-CT mode switch to other mode (CQ <-> S&P)
-	    // - in CT mode send TU and log QSO.
-	    case '=': {
-		if (!ctcomp) {
-
-		    /* switch to other mode */
-		    if (cqmode == CQ) {
-			cqmode = S_P;
-		    } else
-			cqmode = CQ;
-
-		    /* and show new mode */
-		    show_header_line();
-
-		} else {
-
-		    if (strlen(current_qso.call) > 2) {
-			if ((CONTEST_IS(CQWW) || wazmult)
-				&& current_qso.comment[0] == '\0')
-			    strcpy(current_qso.comment, cqzone);
-
-			if (itumult && current_qso.comment[0] == '\0')
-			    strcpy(current_qso.comment, ituzone);
-
-			if (current_qso.comment[0] == '\0') {
-			    x = -1;
-			} else {
-			    /* F4 (TU macro) */
-			    send_standard_message(3);
-
-			    x = '\\';   // key for logging QSO without message
-			}
-		    }
-		}
-		break;
-	    }
-
 	    // Plus (+)
 	    // - in non-CT mode switch to other mode (CQ <-> S&P)
 	    // - in CT mode send TU and log QSO.
